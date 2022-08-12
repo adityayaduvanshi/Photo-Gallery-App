@@ -9,7 +9,7 @@ const getPhotos = `https://api.unsplash.com/photos/random/?count=50&client_id=${
 const ImageProvider = ({ children }) => {
   const [images, setImages] = useState([]);
 
-  //   Get the latest movies
+  //   Get the images
   const GetImages = async () => {
     console.log(process.env);
     await axios
@@ -20,7 +20,7 @@ const ImageProvider = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
-  // Search for Movies
+  // Search for images
   const SearchImages = async (term) => {
     await axios
       .get(searchUrl + term + `&client_id=${process.env.REACT_APP_ACCESS_KEY}`)
